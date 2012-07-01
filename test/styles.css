@@ -1,0 +1,28 @@
+body{
+     margin:40px;
+}
+.content{
+     display: inline-block; 
+     margin: 0px 20px 20px 0px;
+}
+.colors{
+     height: 80px; 
+     width: 80px; 
+     border-radius: 4px;
+}
+.arrow{
+     background:no-repeat url(arrow.png); 
+     height: 16px; 
+     margin-left: 29px; 
+     margin-top: 10px; 
+     margin-bottom: -2px;
+}
+.information{
+     font-family: arial; 
+     font-size: 12px; 
+     background-color:#414141; 
+     color: white;
+     font-weight: bold; 
+     border-radius: 4px; 
+     text-align: center; 
+}
