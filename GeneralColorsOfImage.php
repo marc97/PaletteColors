@@ -34,7 +34,6 @@
 		    $this->getImageSize();
 		    $this->getImagePrecision($precision);
 		    $this->readPixels();
-		   // $this->getImage();
 		
 	    }
 
@@ -80,15 +79,27 @@
 		    for($x = 0; $x < $width; $x += $precision) {
 			    for($y = 0; $y < $height; $y += $precision2) {
 				    
-			    	$index = imagecolorat($img, $x, $y);
+			    	    $index = imagecolorat($img, $x, $y);
 				    $rgb = imagecolorsforindex($img, $index);
 				    $r = $rgb["red"];
 				    $g = $rgb["green"];
 				    $b = $rgb["blue"];
-				    $ro = round(round(($r / 0x33)) * 0x33);
-				    $go = round(round(($g / 0x33)) * 0x33);
-                    $bo = round(round(($b / 0x33)) * 0x33);
-				    $hexarray[] = $this->RGBToHex($ro, $go, $bo);
+				    $ro = round(round(($r / 0x21)) * 0x21);
+				    $go = round(round(($g / 0x21)) * 0x21);
+				    $bo = round(round(($b / 0x21)) * 0x21);
+				    
+                                    if($ro == 264){
+				    	$ro = 255;
+				    }
+				    if($go == 264){
+				    	$go = 255;
+				    }
+                 
+                                    if($bo == 264){
+                    	                $bo = 255;
+                                    }
+				    
+                                    $hexarray[] = $this->RGBToHex($ro, $go, $bo);
 			    }
 		    }
 		    $coinciditions = array_count_values($hexarray);
@@ -96,6 +107,7 @@
 		    return true;
 		
 	    }
+	    
 	    public function RGBToHex($r, $g, $b){
 		
 		    $hex = "#";
@@ -105,6 +117,7 @@
 	
 		    return strtoupper($hex);
 	    }
+	    
 	    public function getPercentatgeOfColors(){
 		
 		    $coinciditions = $this->coinciditions;
@@ -118,7 +131,7 @@
 			    $finallyarray["$color"] = $percentage;
 		    }
 	
-		    asort($finallyarray);
+		asort($finallyarray);
 	        array_keys($finallyarray);
 	        $outputarray = array_slice(array_reverse($finallyarray), 0, $this->maxnumcolors);
 	    
@@ -151,6 +164,7 @@
 		    $this->width = $width;
 		    return "x= ".$width."y= ".$height;
 	    }
+	    
 	    public function getImagePrecision($precision) {
 		    
                     abs($precision);

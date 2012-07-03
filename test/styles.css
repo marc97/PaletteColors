@@ -11,9 +11,9 @@ body{
      border-radius: 4px;
 }
 .arrow{
-     background:no-repeat url(arrow.png); 
-     height: 16px; 
-     margin-left: 29px; 
+     background:no-repeat url(arrow3.png); 
+     height: 20px; 
+     margin-left: 20px; 
      margin-top: 10px; 
      margin-bottom: -2px;
 }
