@@ -60,7 +60,7 @@
 			    case "gif":
 				    $outputimg = "imagecreatefromgif";
 				    break;
-			    case "bpm":
+			    case "bmp":
 				    $outputimg = "imagecreatefrombmp";
 				    break;
 			        default: throw new Exception("GeneralColorsOfImage Says: <br> 
